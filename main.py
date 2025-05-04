@@ -15,11 +15,6 @@ from Slider import Slider
 from SettingsManager import SettingsManager
 #from GameController import GameController
 
-#from pathlib import Path
-#figure out how to use pathlib at some point
-
-
-
 
 # general setup
 pygame.init()
@@ -204,11 +199,8 @@ class GameController():
         global menu_selected
         menu_selected = 0
 
-    #state management<<<<<<<<
+    #state management
     def lose(self):
-        # for i in text_lose_sprites
-        #     i.delete()
-
         global score
         global highscore
         if int(self.get_highscore()) < score:
@@ -290,7 +282,7 @@ class GameController():
     def pause_music(self):
         pygame.mixer.music.pause()
     def unpause_music(self):
-        pygame.mixer.music.unpause()
+        pygame.mixer.music.unpause()<<<<<<<<
 
     #high score management
     def save_highscore(self, hs):
@@ -372,7 +364,7 @@ class Player(pygame.sprite.Sprite):
                 
 
 
-#!!!!!Create a class for scene management, use that instead of DEFs because I think they don't work for some reason.
+#!!!!!Create a class for scene management, use that instead of DEFs because I think they don't work for some reason.<<<<<<<<
 
 class Bullet(pygame.sprite.Sprite):
     def __init__(self, pos, dir, groups):
@@ -621,8 +613,6 @@ while running:
         if player and playing:
             #joystick
             pdir = pygame.math.Vector2(joysticks[player1_id].get_axis(J_MOVE_x), joysticks[player1_id].get_axis(J_MOVE_y))
-            # if abs(pdir.x)<0.15: pdir.x = 0
-            # if abs(pdir.y)<0.15: pdir.y = 0
             player.dir.x = pdir.x if abs(pdir.x)>dead_zone else player.dir.x
             player.dir.y = pdir.y if abs(pdir.y)>dead_zone else player.dir.y
 
