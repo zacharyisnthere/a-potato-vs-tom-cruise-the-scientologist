@@ -459,9 +459,7 @@ class Tom(pygame.sprite.Sprite):
             self.pos += self.dir * self.speed * dt
             self.rect.center = self.pos
 
-        #collision
-
-        
+        #collision        
         self.tom_mask = pygame.mask.from_surface(self.image)
 
         self.tom_mask_image = self.tom_mask.to_surface()
@@ -602,7 +600,6 @@ while running:
             time_since_move_b_J_LEFT += dt
             time_since_move_b_J_RIGHT += dt
 
-            #reset automove if no input
             if not b_J_UP: automove_b_J_UP = True
             if not b_J_DOWN: automove_b_J_DOWN = True
             if not b_J_LEFT: automove_b_J_LEFT = True
@@ -674,10 +671,8 @@ while running:
                     if scene == -1:
                         #settings menu
                         if menu_selected == 0:
-                            #back to main menu
                             _GameController.change_scene(0)
                         if menu_selected == len(menu_buttons)-2:
-                            #reset settings
                             _SettingsManager.reset_settings()
 
                             master_volume = _SettingsManager.settings['master_volume']
@@ -685,38 +680,30 @@ while running:
                             sfx_volume = _SettingsManager.settings['sfx_volume']
 
                         if menu_selected == len(menu_buttons)-1:
-                            #reset high score
                             _GameController.save_highscore(0)
 
                     elif scene == 0:
                         if menu_selected == 0:
-                            #play game
                             _GameController.change_scene(1)
                             _GameController.restart_game()
                         if menu_selected == 1:
-                            #settings
                             _GameController.change_scene(-1)
                         if menu_selected == 2:
-                            #quit
                             _GameController.quit()
 
                     elif scene == 1:
                         if lost:
                             #lose menu
                             if menu_selected == 0:
-                                #restart game
                                 _GameController.restart_game()
                             if menu_selected == 1:
-                                #quit to menu
                                 _GameController.change_scene(0)
 
                         elif paused:
                             #pause menu
                             if menu_selected == 0:
-                                #resume game
                                 _GameController.unpause()
                             if menu_selected == 1:
-                                #quit to menu
                                 _GameController.change_scene(0)
 
 
@@ -726,7 +713,7 @@ while running:
 
         #keyboard
         if event.type == pygame.KEYDOWN:
-            #code handling
+            #secret code handling
             code_string += event.unicode
             if len(code_string) > 6:
                 code_string = code_string[1:]     
@@ -801,10 +788,8 @@ while running:
                     if scene == -1:
                         #settings menu
                         if menu_selected == 0:
-                            #back to main menu
                             _GameController.change_scene(0)
                         if menu_selected == len(menu_buttons)-2:
-                            #reset settings
                             _SettingsManager.reset_settings()
 
                             master_volume = _SettingsManager.settings['master_volume']
@@ -812,38 +797,30 @@ while running:
                             sfx_volume = _SettingsManager.settings['sfx_volume']
 
                         if menu_selected == len(menu_buttons)-1:
-                            #reset high score
                             _GameController.save_highscore(0)
 
                     elif scene == 0:
                         if menu_selected == 0:
-                            #play game
                             _GameController.change_scene(1)
                             _GameController.restart_game()
                         if menu_selected == 1:
-                            #settings
                             _GameController.change_scene(-1)
                         if menu_selected == 2:
-                            #quit
                             _GameController.quit()
 
                     elif scene == 1:
                         if lost:
                             #lose menu
                             if menu_selected == 0:
-                                #restart game
                                 _GameController.restart_game()
                             if menu_selected == 1:
-                                #quit to menu
                                 _GameController.change_scene(0)
 
                         elif paused:
                             #pause menu
                             if menu_selected == 0:
-                                #resume game
                                 _GameController.unpause()
                             if menu_selected == 1:
-                                #quit to menu
                                 _GameController.change_scene(0)
 
 
