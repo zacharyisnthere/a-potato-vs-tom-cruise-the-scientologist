@@ -1,8 +1,8 @@
 <H1>A Potato vs Tom Cruise the Scientologist</H1>
 <h2>A game where you play as a Potato vs Tom Cruise the Scientologist</h2>
 
-Made using pygame-ce by Zachary Petersen
-I can be reached at [zachbrian.petersen@gmail.com] if you want to or whatever.
+<i>Made using pygame-ce by Zachary Petersen.</i> </br>
+<i>I can be reached at zachbrian.petersen@gmail.com if you want to or whatever.</i>
 
 
 
