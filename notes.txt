@@ -1,0 +1,67 @@
+
+TO DO:
+DONE! 0 - add a pause menu in game
+DONE-? 1 - add settings
+    *X Volume (master, music, sfx)
+    * full screen mode, resizable screen mode
+    * change colors, images, sounds
+    * secret codes? 
+    * bonus - change controls? map to gamepad?
+2 - How to play instructions
+    * put in settings? own screen? Just put in text at the bottom of the screen? Latter seems nice?
+3 - Fix Font to make nicer
+3 - refactor? make pretty code, COMPILE AND STUFF 
+4 - upload to itch.io 
+
+add ideas for features below?
+
+instead of the scuffed menu_selected system I have now, the buttons and sliders should have a function that the input system can access and call upon selecting. Only write the code once.
+
+========
+
+* add a menu, some ui
+* instructions, some basic text to show controls
+* settings menu
+    * Master Volume (mute toggle button)
+    * Music Volume
+    * SFX Volume
+    * Controls (figure out how to change controls in an intuitive way for the end user)
+
+NOTE: Figure out how to map gamepad as input. 
+
+
+
+UI State System:
+boolean? X I want it to be more modular than that, have it be an int value where 0 is the the menu or whatever
+
+state_scene:
+0 - menu 
+1 - settings
+2 - game
+
+
+structure:
+
+imports
+
+
+
+
+
+
+
+====
+venv needs to be activated. If I run a .py file normally, it runs on the global python rather than the python inside the venviornment. 
+
+
+(step 1: nav to file path)
+cd /home/zachary/Documents/Repos/SpaceShooterGame
+
+activate venv:
+source venv/bin/activate
+
+run .py inside venv:
+python3 [filename].py
+	
+
+
