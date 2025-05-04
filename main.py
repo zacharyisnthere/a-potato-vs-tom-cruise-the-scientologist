@@ -282,7 +282,7 @@ class GameController():
     def pause_music(self):
         pygame.mixer.music.pause()
     def unpause_music(self):
-        pygame.mixer.music.unpause()<<<<<<<<
+        pygame.mixer.music.unpause()
 
     #high score management
     def save_highscore(self, hs):
