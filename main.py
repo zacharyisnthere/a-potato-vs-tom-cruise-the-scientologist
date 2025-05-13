@@ -26,6 +26,7 @@ screen = pygame.display.set_mode((WINDOW_WIDTH,WINDOW_HEIGHT))
 clock = pygame.time.Clock()
 running = True
 
+web_version = True
 
 #inputs
 joysticks = {}
@@ -286,14 +287,22 @@ class GameController():
 
     #high score management
     def save_highscore(self, hs):
-        f = open('./memory/highscore.mem', 'w')
-        f.write(str(hs))
-        f.close()
+        if not web_version:
+            f = open('./memory/highscore.mem', 'w')
+            f.write(str(hs))
+            f.close()
+        else: 
+            print('cannot save data on web build')
+            print(f'did not save highsore: {hs}')
 
     def get_highscore(self):
-        f = open('./memory/highscore.mem', 'r')
-        return f.read()
-
+        if not web_version:
+            f = open('./memory/highscore.mem', 'r')
+            return f.read()
+        else:
+            print('cannot save data on web build')
+            print(f'current highscore: {highscore}')
+            return highscore
 
     def return_shoot_sounds(self):        
         shoot_sounds = [
